@@ -1,0 +1,40 @@
+{
+  "name": "babel-plugin-linaria-theme",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:Jayphen/babel-plugin-linaria-theme.git",
+  "author": "software@jayphen.com",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/traverse": "^7.8.6",
+    "@babel/types": "^7.8.6",
+    "@types/babel-traverse": "^6.25.5",
+    "@types/babel-types": "^7.0.7",
+    "@types/node": "^13.7.6",
+    "@typescript-eslint/eslint-plugin": "^2.21.0",
+    "@typescript-eslint/parser": "^2.21.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.8.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testMatch": [
+      "**/test/**/*.test.ts"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ]
+  }
+}
