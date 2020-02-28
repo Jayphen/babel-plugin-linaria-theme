@@ -6,6 +6,7 @@
   "author": "software@jayphen.com",
   "license": "MIT",
   "scripts": {
+    "build": "tsc",
     "test": "jest",
     "test:watch": "jest --watch"
   },
