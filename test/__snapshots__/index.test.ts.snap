@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`babel-plugin-linaria-theme Array: Array 1`] = `
+
+const styles = css\`
+  background: red;
+  color: purple;
+  margin: \${theme.default.sizes[1]};
+  background: black;
+  color: \${theme.default.colors.green};
+
+      \`
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const styles = css\`
+  background: red;
+  color: purple;
+  \${themed(t => ({
+    margin: t.sizes[1]
+  }))};
+  background: black;
+  \${themed(t => ({
+    color: t.colors.green
+  }))};
+\`;
+
+
+`;
