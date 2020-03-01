@@ -3,12 +3,12 @@
 exports[`babel-plugin-linaria-theme Array: Array 1`] = `
 
 const styles = css\`
+  background: red;
   \${theme.below.sm} {
     color: red;
   };
-  background: red;
   color: purple;
-  margin: \${theme.default.sizes[1]};
+  margin: \${theme.default.sizes[1].width[1]};
   border: 1px solid \${theme.default.sizes[1]};
   background: black;
   color: \${theme.default.colors.green};
@@ -18,13 +18,13 @@ const styles = css\`
       ↓ ↓ ↓ ↓ ↓ ↓
 
 const styles = css\`
+  background: red;
   \${theme.below.sm} {
     color: red;
   }
-  background: red;
   color: purple;
   \${themed(t => ({
-    margin: t.sizes[1]
+    margin: t.sizes[1].width[1]
   }))};
   \${themed(t => ({
     border: t.sizes[1]

@@ -1,3 +1,3 @@
 export { isValueExpression } from "./isValueExpression";
-export { buildObjectPath } from "./buildObjectPath";
+export { objectPropertiesAsArray } from "./objectPropertiesAsArray";
 export { buildMembersFromArray } from "./buildMembersFromArray";

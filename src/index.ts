@@ -2,8 +2,8 @@ import { PluginObj } from "@babel/core";
 import * as t from "@babel/types";
 import {
   isValueExpression,
-  buildObjectPath,
-  buildMembersFromArray
+  buildMembersFromArray,
+  objectPropertiesAsArray
 } from "./utils";
 
 function main(): PluginObj {
@@ -23,9 +23,12 @@ function main(): PluginObj {
             }
 
             const neighbouringExpression = expressions[index];
-            const objectPath = buildObjectPath(neighbouringExpression, path);
+            const objectProperties = objectPropertiesAsArray(
+              neighbouringExpression,
+              path
+            );
 
-            if (isValueExpression(objectPath, quasi)) {
+            if (isValueExpression(objectProperties, quasi)) {
               const cssPropRegex = /([a-z]+-?[a-z]+):[^;]+$/;
               const partialValueRegex = /: (.*) /;
 
@@ -45,7 +48,7 @@ function main(): PluginObj {
               const partials: (string | undefined)[] = [];
               partials[index] = partialVal;
 
-              const members = buildMembersFromArray(objectPath.slice(2));
+              const members = buildMembersFromArray(objectProperties.slice(2));
 
               const expression = t.callExpression(t.identifier("themed"), [
                 t.arrowFunctionExpression(

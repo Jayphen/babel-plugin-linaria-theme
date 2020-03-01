@@ -12,13 +12,12 @@ pluginTester({
       },
       code: `
 const styles = css\`
+  background: red;
   \${theme.below.sm} {
     color: red;
   };
-  background: red;
   color: purple;
-  margin: \${theme.default.sizes[1]};
-  border: 1px solid \${theme.default.sizes[1]};
+  margin: \${theme.default.sizes[1].width[1]};
   border: 1px solid \${theme.default.sizes[1]};
   background: black;
   color: \${theme.default.colors.green};
